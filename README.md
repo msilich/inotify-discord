@@ -12,7 +12,7 @@ This Python script monitors a folder and its subfolders for file changes and sen
 
 ```bash
 git clone https://github.com/msilich/inotify-discord.git
-cd inotify-discord-notifier
+cd inotify-discord
 ```
 
 2. Build the Docker container:
