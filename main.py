@@ -1,6 +1,11 @@
 import inotify.adapters
 import os
 import requests
+import logging
+from datetime import datetime
+
+# Configure logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(message)s')
 
 # Function to send a notification to Discord using a webhook
 def send_discord_notification(webhook_url, message):
@@ -28,10 +33,17 @@ def main():
         # Filter the events we are interested in
         if "IN_CREATE" in type_names or "IN_DELETE" in type_names or "IN_MODIFY" in type_names:
             message = f"Ordner: [{path}] Datei:[{filename}] Typ: {type_names}"
-            print(message)
+            logging.info(message)
+
+            # Send a Discord notification with the timestamp
+            timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            discord_message = f"{timestamp} - {message}"
 
             # Send a Discord notification
-            send_discord_notification(discord_webhook_url, message)
+            #send_discord_notification(discord_webhook_url, message)
+            send_discord_notification(discord_webhook_url, discord_message)
+
+
 
 if __name__ == "__main__":
     main()
