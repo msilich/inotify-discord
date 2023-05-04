@@ -11,7 +11,7 @@ def send_discord_notification(webhook_url, message):
         raise ValueError(f"Request failed: Status {response.status_code}, Text: {response.text}")
 
 def main():
-    folder = "/cinema"
+    folder = "/folderwatch"
     discord_webhook_url = os.environ.get("DISCORD_WEBHOOK_URL")
 
     # Check if the webhook URL environment variable is set

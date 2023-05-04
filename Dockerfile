@@ -9,7 +9,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Kopiere das Python-Skript
 COPY main.py .
-
+RUN mkdir /folderwatch
 # Setze Umgebungsvariable für den Discord-Webhook
 ENV DISCORD_WEBHOOK_URL ""
 
