@@ -26,4 +26,26 @@ docker run -d \
   --name inotify-discord \
   -e DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/your-webhook-url" \
   -v /cinema:/path/to/your/folder:ro \
-  inotify-discord
+  quay.io/michael_silich/tools:latest
+```
+
+4. With Docker Compose
+Clone this repository:
+
+```
+git clone https://github.com/msilich/inotify-discord.git
+cd inotify-discord-notifier
+```
+
+Update the docker-compose.yml file:
+Replace /path/to/your/folder with the path to the folder you want to monitor and your-webhook-url with your Discord webhook URL.
+
+5. Run the container using Docker Compose:
+```
+docker-compose up -d
+```
+To stop and remove the container, use:
+
+```
+docker-compose down
+```
