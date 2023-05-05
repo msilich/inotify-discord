@@ -25,7 +25,7 @@ docker build -t inotify-discord .
 docker run -d \
   --name inotify-discord \
   -e DISCORD_WEBHOOK_URL="https://discord.com/api/webhooks/your-webhook-url" \
-  -v /cinema:/path/to/your/folder:ro \
+  -v /folderwatch:/path/to/your/folder:ro \
   quay.io/michael_silich/tools:latest
 ```
 
