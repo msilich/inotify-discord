@@ -31,7 +31,7 @@ def main():
         (_, type_names, path, filename) = event
 
         # Filter the events we are interested in
-        if "IN_CREATE" in type_names or "IN_DELETE" in type_names or "IN_MODIFY" in type_names:
+        if "IN_CREATE" in type_names or "IN_DELETE" in type_names:
             message = f"Ordner: [{path}] Datei:[{filename}] Typ: {type_names}"
             logging.info(message)
 
